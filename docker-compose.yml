@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  redis:
+    image: 'redis'
+    ports:
+      - '6379:6379'
+
+  api:
+    build: './'
+    volumes:
+      - ./crawler:/service/crawler
+
+    ports:
+      - 8000:8000
+
+    links:
+      - redis:redis
