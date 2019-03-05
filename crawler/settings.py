@@ -1,7 +1,9 @@
 from pathlib import Path
 
+from .helpers import required_env
+
 PROJECT_ROOT = Path(__file__).parent.parent
 
-TWITTER_CLIENT_ID = "8GiMi5BBvnjdDo8OF0HtymrKo"
+TWITTER_CLIENT_ID = required_env("TWITTER_CLIENT_ID")
 
-TWITTER_CLIENT_SECRET = "7Mbhp7N02x7xoGv9qfir1sk9UQ25QUwCEn6zQ3hiqmb1js6wkh"
+TWITTER_CLIENT_SECRET = required_env("TWITTER_CLIENT_SECRET")
